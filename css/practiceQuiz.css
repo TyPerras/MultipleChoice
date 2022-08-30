@@ -1,0 +1,179 @@
+.multipleChoiceActivityContainer .questionTitle {
+	font-size: 16px;
+	font-weight: bold;
+	display: block;
+	padding: 0.5em 0em 1em 0em;
+}
+
+.multipleChoiceActivityContainer ol {
+	counter-reset: list;
+	padding-left: 0;
+	margin-left: 0;
+	font-size: 14px;
+    line-height: unset;
+}
+
+.multipleChoiceActivityContainer ol > li {
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	list-style: none;
+	background-color:#DDDCDC;
+	border: 2px solid #797676;
+	border-radius: 4px;
+	padding: 0.5rem 0.5rem 0.5rem 1rem;
+	margin-bottom: 0.3rem;
+	/*align-items: center;*/
+	display: flex;
+    align-items: center;
+}
+
+.multipleChoiceActivityContainer ol > li:last-child {
+	padding: 0.5rem 0.5rem 0.5rem 1rem;
+}
+
+.multipleChoiceActivityContainer ol > li:before {
+	content: counter(list, upper-alpha) ") ";
+	counter-increment: list;
+	font-weight: bold;
+	padding: 0rem 0.5rem 0rem 0rem;
+}
+
+.multipleChoiceActivityContainer ol > li:hover {
+	transition: transform 100ms;
+	transform: scale(1.01);
+}
+
+.multipleChoiceActivityContainer ol > li input.choice-text {
+	display: inline-block;
+	width: 0px;
+	opacity: 0;  /* hides default ratio input graphics */
+	cursor: pointer;
+	margin-bottom: 0rem;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.multipleChoiceActivityContainer ol > li label {
+	display: flex;
+	flex-direction: row-reverse; /* Putting the customRadioSelector before the input text */
+	align-items: center;
+	margin-bottom: 0rem;
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+	user-select: none; 
+	cursor: pointer;
+}
+
+.radioContainer {
+	margin-bottom: 0rem;
+}
+
+/* Create a custom radio button */
+.multipleChoiceActivityContainer ol > li .customRadioSelector {
+	/*position: absolute;*/
+	flex-shrink: 0; /* This ensures that all of the custom radio buttons stay the same width, and don't shrink when there is alot of text content */
+	display: inline-block;
+	left: 0rem;
+	height: 19px;
+	width: 19px;
+	background-color: #fff;
+	border-radius: 50%;
+	border: 2px solid #797676;
+	/*margin-left: 1.3em;*/
+	margin: 0rem 0.5rem 0rem 0rem;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+/* Style the indicator (dot/circle) */
+.radioContainer .customRadioSelector:after {
+	flex-shrink: 0; /* This ensures that all of the custom radio buttons stay the same width, and don't shrink when there is alot of text content */
+	position: absolute;
+	content: "";
+	display: none;
+	margin-top: 4px;
+	margin-left: 4px;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: #fff;
+}
+
+/* When the radio button is checked, add a blue background */
+.radioContainer input:checked ~ .customRadioSelector {
+	background-color: #0060c4;
+	border: 2px solid #fff;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radioContainer input:checked ~ .customRadioSelector:after {
+	display: block;
+}
+
+.multipleChoiceActivityContainer ol > li.correct {
+	background-color: #40845A;
+	border: 2px solid #40845A;
+	cursor: pointer;
+	-webkit-box-shadow: 0px 0px 6px 2px rgba(64,132,90,0.32); 
+	box-shadow: 0px 0px 6px 2px rgba(64,132,90,0.32);
+	transition: transform 100ms;
+	transform: scale(1.01);
+	color: #fff;
+}
+
+.multipleChoiceActivityContainer ol > li.incorrect {
+	background-color: #C00000;
+	border: 2px solid #C00000;
+	cursor: pointer;
+	-webkit-box-shadow: 0px 0px 6px 2px rgba(232,64,55,0.32); 
+	box-shadow: 0px 0px 6px 2px rgba(232,64,55,0.32);
+	transition: transform 100ms;
+	transform: scale(1.01);
+	color: #fff;
+}
+
+.radioContainer:hover {
+	opacity: .9;
+	/*background-color: #ccc;*/
+	cursor: pointer;
+	-webkit-box-shadow: 0px 0px 6px 2px rgba(0,0,0,0.32); 
+	box-shadow: 0px 0px 6px 2px rgba(0,0,0,0.32);
+	transition: transform 100ms;
+	transform: scale(1.01);
+}
+
+.radioContainer.correct:hover {
+	/*background-color: #279b54;*/
+	opacity: .9;
+	/*cursor: pointer;*/
+	-webkit-box-shadow: 0px 0px 6px 2px rgba(64,132,90,0.32); 
+	box-shadow: 0px 0px 6px 2px rgba(64,132,90,0.32);
+	transition: transform 100ms;
+	transform: scale(1.01);
+	color: #fff;
+}
+
+.radioContainer.incorrect:hover {
+	/*background-color: #e84037;*/
+	opacity: .9;
+	cursor: pointer;
+	-webkit-box-shadow: 0px 0px 6px 2px rgba(192,0,0,0.32); 
+	box-shadow: 0px 0px 6px 2px rgba(192,0,0,0.32);
+	transition: transform 100ms;
+	transform: scale(1.01);
+	color: #fff;
+}
+
+.feedback {
+	padding-left: 1em;
+	white-space: nowrap;
+	font-weight: bold;
+	margin-left: auto;
+	width: 7em;
+	flex: 0 0 auto;
+}
