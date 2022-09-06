@@ -5,7 +5,7 @@
 	padding: 0.5em 0em 1em 0em;
 }
 
-.multipleChoiceActivityContainer ol {
+.multipleChoiceActivityContainer form > ol {
 	counter-reset: list;
 	padding-left: 0;
 	margin-left: 0;
@@ -13,7 +13,7 @@
     line-height: unset;
 }
 
-.multipleChoiceActivityContainer ol > li {
+.multipleChoiceActivityContainer form > ol > li {
 	cursor: pointer;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -30,23 +30,23 @@
     align-items: center;
 }
 
-.multipleChoiceActivityContainer ol > li:last-child {
+.multipleChoiceActivityContainer form > ol > li:last-child {
 	padding: 0.5rem 0.5rem 0.5rem 1rem;
 }
 
-.multipleChoiceActivityContainer ol > li:before {
+.multipleChoiceActivityContainer form > ol > li:before {
 	content: counter(list, upper-alpha) ") ";
 	counter-increment: list;
 	font-weight: bold;
 	padding: 0rem 0.5rem 0rem 0rem;
 }
 
-.multipleChoiceActivityContainer ol > li:hover {
+.multipleChoiceActivityContainer form > ol > li:hover {
 	transition: transform 100ms;
 	transform: scale(1.01);
 }
 
-.multipleChoiceActivityContainer ol > li input.choice-text {
+.multipleChoiceActivityContainer form > ol > li input.choice-text {
 	display: inline-block;
 	width: 0px;
 	opacity: 0;  /* hides default ratio input graphics */
@@ -58,7 +58,7 @@
 	user-select: none;
 }
 
-.multipleChoiceActivityContainer ol > li label {
+.multipleChoiceActivityContainer form > ol > li label {
 	display: flex;
 	flex-direction: row-reverse; /* Putting the customRadioSelector before the input text */
 	align-items: center;
@@ -75,7 +75,7 @@
 }
 
 /* Create a custom radio button */
-.multipleChoiceActivityContainer ol > li .customRadioSelector {
+.multipleChoiceActivityContainer form > ol > li .customRadioSelector {
 	/*position: absolute;*/
 	flex-shrink: 0; /* This ensures that all of the custom radio buttons stay the same width, and don't shrink when there is alot of text content */
 	display: inline-block;
@@ -115,7 +115,7 @@
 	display: block;
 }
 
-.multipleChoiceActivityContainer ol > li.correct {
+.multipleChoiceActivityContainer form > ol > li.correct {
 	background-color: #40845A;
 	border: 2px solid #40845A;
 	cursor: pointer;
@@ -126,7 +126,7 @@
 	color: #fff;
 }
 
-.multipleChoiceActivityContainer ol > li.incorrect {
+.multipleChoiceActivityContainer form > ol > li.incorrect {
 	background-color: #C00000;
 	border: 2px solid #C00000;
 	cursor: pointer;
